@@ -1,4 +1,4 @@
-const { BrowserWindow, screen } = require('electron')
+const { BrowserWindow, screen, ipcMain } = require('electron')
 const path = require('path')
 const env  = require('../../.env')
 
@@ -15,6 +15,7 @@ module.exports = {
             show: false,
             frame: false,
             resizable: false,
+            skipTaskbar: true,
             icon: path.join(__dirname, '..', 'images', 'tray.png'),
             darkTheme: true,
             webPreferences: {
@@ -29,14 +30,13 @@ module.exports = {
         win.loadURL(env.isDev ? env.urlDev : env.url)
 
         // Event to show program
-        win.on('show', () => {
-            if (process.platform==='darwin') tray.setHighlightMode('always')
-        })
+        win.on('show', () => process.platform==='darwin' && tray.setHighlightMode('always'))
 
         // Event to hide program
-        win.on('hide', () => {
-            if (process.platform==='darwin') tray.setHighlightMode('never')
-        })
+        win.on('hide', () => process.platform==='darwin' && tray.setHighlightMode('never'))
+
+        win.setAlwaysOnTop(true)
+        win.on('blur', () => { win.webContents.postMessage('infos', false); setTimeout(() => win.hide(), 20) })
 
         // Open the DevTools.
         // win.webContents.openDevTools()

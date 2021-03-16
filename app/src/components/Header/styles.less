@@ -2,6 +2,8 @@
 @import '../../assets/less/functions.less';
 @import '../../assets/less/colors.less';
 
+@infos: rgb(11, 76, 180);
+
 body > #root > main > #header {
     .flex('row', 'between', 'center', 'stretch', 1);
     position: relative;
@@ -43,6 +45,16 @@ body > #root > main > #header {
             &:hover {
                 color: @white-light;
                 background-color: @black-medium;
+            }
+
+            &.eng.active {
+                color: @white;
+                background-color: green;
+            }
+
+            &.info:hover, &.info.active {
+                color: @white;
+                background-color: @infos;
             }
 
             &.btnClose:hover {

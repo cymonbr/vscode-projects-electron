@@ -17,6 +17,6 @@ module.exports = {
 
     get: function (key) {
         const data = this.store.get(key);
-        return data ? JSON.parse(data) : [];
+        return data ? JSON.parse(data) : null;
     },
 }

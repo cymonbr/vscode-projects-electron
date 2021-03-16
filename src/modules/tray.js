@@ -3,12 +3,10 @@ const { spawn } = require('child_process')
 const path      = require('path')
 const sort_by   = require('../utils/sort')
 const store     = require('../utils/store')
+const env       = require('../../.env')
 
 // Init Store
 store.create()
-
-// Env
-const env = require('../../.env')
 
 module.exports = {
     tray    : null,
@@ -18,13 +16,13 @@ module.exports = {
     trayIcon: function (win) {
         this.win      = win
         this.tray     = new Tray(path.join(__dirname, '..', 'images', 'tray.png'))
-        this.projects = store.get('projects')
+        this.projects = store.get('projects')!==null ? store.get('projects') : []
+        this.win.webContents.postMessage('projects', this.projects)
 
         this.tray.setToolTip(env.title)
         this._projectsEvents()
         this._setContext()
 
-        this.tray.on('double-click', () => this.win.isVisible() ? this.win.hide() : this.win.show())
         this.tray.on('click', () => this.tray.popUpContextMenu(this._getContext()));
 
         return this.tray
@@ -32,20 +30,18 @@ module.exports = {
 
     _setContext: function () {
         const context = Menu.buildFromTemplate([
-            {label: 'Editar Projetos', click: () => { this.win.isVisible() ? this.win.hide() : this.win.show() }},
+            {label: 'Editar Projetos', click: () => this.win.isVisible() ? this.win.hide() : this.win.show()},
             {type: 'separator'},
             {label: 'Fechar', click: () => { app.quit() }}
         ])
+
         this.tray.setContextMenu(context)
     },
 
     _getContext: function () {
-        this.projects = store.get('projects')
-        this.win.webContents.send('store', this.projects)
-
         let items = this.projects.map(el => ({
             label: el.name,
-            click: () => { spawn('code', [el.path], { shell: true }) }
+            click: () => spawn('code', [el.path], { shell: true })
         }))
 
         return Menu.buildFromTemplate([...items])

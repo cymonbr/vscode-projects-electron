@@ -1,0 +1,45 @@
+@import '../../assets/less/fonts.less';
+@import '../../assets/less/functions.less';
+@import '../../assets/less/colors.less';
+
+body > #root > main #infos {
+    .flex('column', 'center', 'center', 'stretch', 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: fade(@black-dark, 90);
+    z-index: 9999;
+
+    *, *::after, *::before {
+        -webkit-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-app-region: no-drag;
+        cursor: default;
+    }
+
+    > .logo {
+        .flex('column', 'center', 'center', 'stretch');
+
+        > img {
+            width: 30%;
+
+            &.text {
+                margin-top: 15px;
+                width: 50%;
+            }
+        }
+    }
+
+    > .texts {
+        .flex('column', 'center', 'center', 'stretch');
+        margin-top: 50px;
+        font-size: 13px;
+        color: @white-light;
+
+        > span {
+            margin: 3px 0;
+        }
+    }
+}

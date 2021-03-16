@@ -1,24 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import { FaPlus, FaSyncAlt, FaTrash } from 'react-icons/fa';
 import ipcRenderer from '~/helpers/ipcRenderer';
 import './styles.css';
 
 // Components
 import Header from '~/components/Header';
+import Infos from '~/components/Infos';
 
 const Dashboard: React.FC<any> = () => {
-    const [store, setStore]   = useState([])
+    const [infos, setInfos] = useState(false)
+    const [store, setStore] = useState([])
 
     useEffect(() => {
         if (ipcRenderer) {
-            ipcRenderer.on('store', (event, arg) => setStore(arg))
             ipcRenderer.on('projects', (event, arg) => setStore(arg))
+            ipcRenderer.on('infos', (event, arg) => setInfos(arg))
         }
-    }, [store])
+    }, [infos, store])
 
     return (
         <main id="dashboard">
-            <Header />
+            <Header infos={infos} setInfos={setInfos} />
 
             <div className="contents">
                 <div className="btns">
@@ -42,7 +44,7 @@ const Dashboard: React.FC<any> = () => {
                 <div className="content">
                     {
                         store.length>0 && store.map((el: any, i: number) => (
-                            <>
+                            <Fragment key={'item_line_' + i}>
                                 { i>0 && <hr /> }
                                 <div className="item">
                                     <div className="infos">
@@ -54,10 +56,12 @@ const Dashboard: React.FC<any> = () => {
                                         <FaTrash size={12} />
                                     </button>
                                 </div>
-                            </>
+                            </Fragment>
                         ))
                     }
                 </div>
+
+                { infos && <Infos /> }
             </div>
         </main>
     );
