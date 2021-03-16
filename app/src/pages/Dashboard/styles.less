@@ -1,0 +1,116 @@
+@import '../../assets/less/fonts.less';
+@import '../../assets/less/functions.less';
+@import '../../assets/less/colors.less';
+
+body, body > #root {
+    .flex('column', 'between', 'center', 'stretch');
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+body > #root > main#dashboard {
+    .flex('column', 'between', 'center', 'stretch', 1);
+    font-family: @roboto;
+    color: @black;
+    background-color: @white-light;
+
+    * {
+        box-sizing: border-box;
+    }
+
+    *, *::after, *::before {
+        -webkit-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-app-region: no-drag;
+    }
+
+    a, button {
+        &:active, &:focus {
+            outline: none;
+            border: none;
+        }
+    }
+
+    h1, h2, h3, h4 {
+        margin: 0;
+    }
+
+    > .contents {
+        .flex('column', 'start', 'center', 'stretch', 1);
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        > .btns {
+            .flex('row', 'between', 'center', 'stretch');
+            margin-top: 1px;
+            margin-bottom: 1px;
+
+            > button {
+                padding: 10px 15px;
+                width: 85%;
+                color: fade(@white, 80);
+                background-color: rgb(47, 129, 0);
+                border: none;
+
+                &.clear {
+                    margin-left: 1px;
+                    width: 15%;
+                    background-color: rgb(185, 136, 0)
+                }
+            }
+        }
+
+        > .content {
+            .flex('column', 'start', 'center', 'stretch', 1);
+            padding: 20px 10px;
+            overflow: hidden;
+            overflow-y: auto;
+            background-color: @black-medium;
+
+            > .item {
+                .flex('row', 'between', 'center', 'stretch');
+
+                > .infos {
+                    .flex('column', 'between', 'center', 'stretch', 1);
+
+                    > h2 {
+                        .flex('row', 'start', 'center', 'stretch', 1);
+                        font-size: 11px;
+                        color: @white;
+                    }
+
+                    > div.folder {
+                        .flex('row', 'start', 'center', 'stretch', 1);
+                        font-size: 10px;
+                        color: fade(@white, 50);
+
+                        > span {
+                            .wrapLineOverflow(95%);
+                        }
+                    }
+                }
+
+                > button {
+                    .flex('column', 'between', 'center', 'stretch');
+                    padding: 10px;
+                    width: 40px;
+                    color: @white;
+                    background-color: @red;
+                    border: none;
+                }
+            }
+
+            > hr {
+                .flex('column', 'center', 'center', 'stretch');
+                margin: 25px 0;
+                width: 100%;
+                height: 1px;
+                background-color: lighten(@black-medium, 5);
+                border: none;
+            }
+        }
+    }
+}

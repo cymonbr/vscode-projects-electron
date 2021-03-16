@@ -1,0 +1,58 @@
+@import '../../assets/less/fonts.less';
+@import '../../assets/less/functions.less';
+@import '../../assets/less/colors.less';
+
+body > #root > main > #header {
+    .flex('row', 'between', 'center', 'stretch', 1);
+    position: relative;
+    background-color: @black-dark;
+    z-index: 9999;
+
+    *, *::after, *::before {
+        -webkit-user-select: none;
+        -webkit-user-drag: none;
+        -webkit-app-region: no-drag;
+        cursor: default;
+    }
+
+    > h1 {
+        .flex('row', 'center', 'center', 'stretch', 1);
+        padding: 12px 15px;
+        font-family: @roboto;
+        font-size: 12px;
+        font-weight: 600;
+        color: @white-light;
+        // -webkit-app-region: drag !important;
+    }
+
+    > .buttons {
+        .flex('row', 'start', 'center', 'stretch');
+        width: 85px;
+
+        &.right {
+            .flex('row', 'end', 'center', 'stretch');
+        }
+
+        > button {
+            .flex('column', 'center', 'center', 'stretch');
+            padding: 0 15px;
+            color: @black-light;
+            background-color: transparent;
+            border: none;
+
+            &:hover {
+                color: @white-light;
+                background-color: @black-medium;
+            }
+
+            &.btnClose:hover {
+                background-color: @red;
+            }
+
+            &:active, &:focus {
+                outline: none;
+                border: none;
+            }
+        }
+    }
+}

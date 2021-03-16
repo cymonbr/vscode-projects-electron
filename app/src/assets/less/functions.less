@@ -1,0 +1,427 @@
+/* Font Family */
+@roboto: 'Roboto', Arial, Helvetica, sans-serif;
+@robotoCondensed: 'Roboto Condensed', Arial, Helvetica, sans-serif;
+
+/* Borda arredondada */
+.borderRadius(@radius: 6px, @important: 0) {
+    border-radius: @radius;
+    -moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+
+    & when (@important = 1) {
+        border-radius: @radius !important;
+        -moz-border-radius: @radius !important;
+        -webkit-border-radius: @radius !important;
+    }
+}
+
+// Shadow Boxs
+.shadowBox(@horLength: 0, @verLength: -80px, @blurRadius: 30px, @spreadRadius: -55px, @color: #000, @type: initial) {
+    & when (@horLength = none) {
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    & when (@type = initial) {
+        -moz-box-shadow: @horLength @verLength @blurRadius @spreadRadius @color;
+        -webkit-box-shadow: @horLength @verLength @blurRadius @spreadRadius @color;
+        box-shadow: @horLength @verLength @blurRadius @spreadRadius @color;
+    }
+
+    & when (@type = inset) {
+        -moz-box-shadow: inset @horLength @verLength @blurRadius @spreadRadius @color;
+        -webkit-box-shadow: inset @horLength @verLength @blurRadius @spreadRadius @color;
+        box-shadow: inset @horLength @verLength @blurRadius @spreadRadius @color;
+    }
+}
+
+// Shadow Texts
+.textShadow(@horPos: 4px, @verPos: 2px, @blur: 4px, @color: rgba(150, 150, 150, 1)) {
+    text-shadow: @horPos @verPos @blur @color;
+}
+
+// Transition between style items
+.transition(@item: all, @time: .2s, @effect: ease-in-out) {
+    -webkit-transition: @item @time @effect;
+    -moz-transition: @item @time @effect;
+    -o-transition: @item @time @effect;
+    -ms-transition: @item @time @effect;
+    transition: @item @time @effect;
+}
+
+.opacity(@percentIE) {
+    @percent: @percentIE/100;
+
+    opacity: @percent;
+    filter: alpha(opacity=@percentIE); /* For IE8 and earlier */
+}
+
+.resetDiv() {
+    & {
+        animation: none;
+        animation-delay: 0;
+        animation-direction: normal;
+        animation-duration: 0;
+        animation-fill-mode: none;
+        animation-iteration-count: 1;
+        animation-name: none;
+        animation-play-state: running;
+        animation-timing-function: ease;
+        backface-visibility: visible;
+        background: 0;
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-color: transparent;
+        background-image: none;
+        background-origin: padding-box;
+        background-position: 0 0;
+        background-position-x: 0;
+        background-position-y: 0;
+        background-repeat: repeat;
+        background-size: auto auto;
+        border: 0;
+        border-style: none;
+        border-width: medium;
+        border-color: inherit;
+        border-bottom: 0;
+        border-bottom-color: inherit;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-style: none;
+        border-bottom-width: medium;
+        border-collapse: separate;
+        border-image: none;
+        border-left: 0;
+        border-left-color: inherit;
+        border-left-style: none;
+        border-left-width: medium;
+        border-radius: 0;
+        border-right: 0;
+        border-right-color: inherit;
+        border-right-style: none;
+        border-right-width: medium;
+        border-spacing: 0;
+        border-top: 0;
+        border-top-color: inherit;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-top-style: none;
+        border-top-width: medium;
+        bottom: auto;
+        box-shadow: none;
+        box-sizing: content-box;
+        caption-side: top;
+        clear: none;
+        clip: auto;
+        color: inherit;
+        columns: auto;
+        column-count: auto;
+        column-fill: balance;
+        column-gap: normal;
+        column-rule: medium none currentColor;
+        column-rule-color: currentColor;
+        column-rule-style: none;
+        column-rule-width: none;
+        column-span: 1;
+        column-width: auto;
+        content: normal;
+        counter-increment: none;
+        counter-reset: none;
+        cursor: auto;
+        direction: ltr;
+        display: inline;
+        empty-cells: show;
+        float: none;
+        font: normal;
+        font-family: inherit;
+        font-size: medium;
+        font-style: normal;
+        font-variant: normal;
+        font-weight: normal;
+        height: auto;
+        hyphens: none;
+        left: auto;
+        letter-spacing: normal;
+        line-height: normal;
+        list-style: none;
+        list-style-image: none;
+        list-style-position: outside;
+        list-style-type: disc;
+        margin: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        max-height: none;
+        max-width: none;
+        min-height: 0;
+        min-width: 0;
+        opacity: 1;
+        orphans: 0;
+        outline: 0;
+        outline-color: invert;
+        outline-style: none;
+        outline-width: medium;
+        overflow: visible;
+        overflow-x: visible;
+        overflow-y: visible;
+        padding: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        page-break-after: auto;
+        page-break-before: auto;
+        page-break-inside: auto;
+        perspective: none;
+        perspective-origin: 50% 50%;
+        position: static;
+        /* May need to alter quotes for different locales (e.g fr) */
+        quotes: '\201C' '\201D' '\2018' '\2019';
+        right: auto;
+        tab-size: 8;
+        table-layout: auto;
+        text-align: inherit;
+        text-align-last: auto;
+        text-decoration: none;
+        text-decoration-color: inherit;
+        text-decoration-line: none;
+        text-decoration-style: solid;
+        text-indent: 0;
+        text-shadow: none;
+        text-transform: none;
+        top: auto;
+        transform: none;
+        transform-style: flat;
+        transition: none;
+        transition-delay: 0s;
+        transition-duration: 0s;
+        transition-property: none;
+        transition-timing-function: ease;
+        unicode-bidi: normal;
+        vertical-align: baseline;
+        visibility: visible;
+        white-space: normal;
+        widows: 0;
+        width: auto;
+        word-spacing: normal;
+        z-index: auto;
+        /* basic modern patch */
+        // all: initial;
+        // all: unset;
+    }
+}
+
+.clearfix() {
+    &:after {
+        visibility: hidden;
+        display: block;
+        font-size: 0;
+        content: " ";
+        clear: both;
+        height: 0;
+    }
+}
+
+.positions(@sizes, @index) when (@index > 0) {
+    .positions(@sizes; (@index - 1)); // decrement.
+
+    @positions: top, bottom, left, right;
+    @positionsLenght: length(@positions);
+
+    @size: extract(@sizes, @index);
+
+    .generatePositions(@positions, "margin", @size, @positionsLenght);
+    .generatePositions(@positions, "padding", @size, @positionsLenght);
+}
+
+.generatePositions(@positions, @type, @size, @index) when (@index > 0) {
+    .generatePositions(@positions, @type, @size, (@index - 1)); // decrement.
+
+    @position: extract(@positions, @index);
+    @className: ~"@{type}-@{position}-@{size}";
+    @itemCss: ~"@{type}-@{position}";
+
+    .@{className} { @{itemCss}: ~"@{size}px"; }
+}
+
+// Texts Effects
+.wrapLineOverflow(@width: 100%, @maxWidth: 0) {
+    width: @width;
+    text-overflow: ellipsis;
+	white-space: nowrap;
+    overflow: hidden;
+
+    & when (@maxWidth > 0) {
+        max-width: @maxWidth;
+    }
+}
+
+// Background Cover
+.bkgCover(@pos: center center, @size: cover) {
+    background-repeat: no-repeat;
+    background-position: @pos;
+    -webkit-background-size: @size;
+    -moz-background-size: @size;
+    -o-background-size: @size;
+    background-size: @size;
+}
+
+// Functions Flex
+.flex(@direction: '', @justify: '', @align: '', @self: '', @grow: '', @flex: initial) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex: @flex;
+
+    // Directions
+    & when (@direction = 'column') {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+
+    // Justify
+    & when (@justify = 'start') {
+        -webkit-box-pack: start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+    }
+
+    & when (@justify = 'end') {
+        -webkit-box-pack: end;
+        -ms-flex-pack: end;
+        justify-content: flex-end;
+    }
+
+    & when (@justify = 'center') {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    & when (@justify = 'around') {
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+    }
+
+    & when (@justify = 'between') {
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    // Align
+    & when (@align = 'start') {
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+    }
+
+    & when (@align = 'end') {
+        -webkit-box-align: end;
+        -ms-flex-align: end;
+        align-items: flex-end;
+    }
+
+    & when (@align = 'center') {
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+
+    & when (@align = 'baseline') {
+        -webkit-box-align: baseline;
+        -ms-flex-align: baseline;
+        align-items: baseline;
+    }
+
+    & when (@align = 'stretch') {
+        -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+        align-items: stretch;
+    }
+
+    // Align Self
+    & when (@self = 'auto') {
+        -ms-flex-item-align: auto;
+        align-self: auto;
+    }
+
+    & when (@self = 'start') {
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+    }
+
+    & when (@self = 'end') {
+         -ms-flex-item-align: end;
+        align-self: flex-end;
+    }
+
+    & when (@self = 'center') {
+        -ms-flex-item-align: center;
+        align-self: center;
+    }
+
+    & when (@self = 'baseline') {
+        -ms-flex-item-align: baseline;
+        align-self: baseline;
+    }
+
+    & when (@self = 'stretch') {
+        -ms-flex-item-align: stretch;
+        align-self: stretch;
+    }
+
+    // Grow
+    & when (@grow > 0) {
+        -webkit-box-flex: @grow;
+        -ms-flex-positive: @grow;
+        flex-grow: @grow;
+    }
+}
+
+.flexWrap(@size: 'all', @type: wrap) {
+    & when (@size = 'all') {
+        -ms-flex-wrap: @type !important;
+        flex-wrap: @type !important;
+    }
+
+    & when (@size = 'xs') {
+        @media (max-width:@screen-xs-max) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+
+    & when (@size = 'sm') {
+        @media (min-width:@screen-sm) and (max-width:@screen-sm-max) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+
+    & when (@size = 'md') {
+        @media (min-width:@screen-md) and (max-width:@screen-md-max) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+
+    & when (@size = 'lg') {
+        @media (min-width:@screen-lg) and (max-width:@screen-lg-max) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+
+    & when (@size = 'xl') {
+        @media (min-width:@screen-xl) {
+            -ms-flex-wrap: @type !important;
+            flex-wrap: @type !important;
+        }
+    }
+}

@@ -1,0 +1,336 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmYUtvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVi2ZhZI2eCN5jzbjEETS9weq8-33mZKCM.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVl2ZhZI2eCN5jzbjEETS9weq8-59U.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v19/ieVi2ZhZI2eCN5jzbjEETS9weq8-32meKCM.ttf) format('truetype');
+}
+/* Font Family */
+/* Borda arredondada */
+body,
+body > #root {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+body > #root > main#dashboard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  color: #000;
+  background-color: #F0F0F0;
+}
+body > #root > main#dashboard * {
+  box-sizing: border-box;
+}
+body > #root > main#dashboard *,
+body > #root > main#dashboard *::after,
+body > #root > main#dashboard *::before {
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
+}
+body > #root > main#dashboard a:active,
+body > #root > main#dashboard button:active,
+body > #root > main#dashboard a:focus,
+body > #root > main#dashboard button:focus {
+  outline: none;
+  border: none;
+}
+body > #root > main#dashboard h1,
+body > #root > main#dashboard h2,
+body > #root > main#dashboard h3,
+body > #root > main#dashboard h4 {
+  margin: 0;
+}
+body > #root > main#dashboard > .contents {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body > #root > main#dashboard > .contents > .btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  margin-top: 1px;
+  margin-bottom: 1px;
+}
+body > #root > main#dashboard > .contents > .btns > button {
+  padding: 10px 15px;
+  width: 85%;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: #2f8100;
+  border: none;
+}
+body > #root > main#dashboard > .contents > .btns > button.clear {
+  margin-left: 1px;
+  width: 15%;
+  background-color: #b98800;
+}
+body > #root > main#dashboard > .contents > .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  padding: 20px 10px;
+  overflow: hidden;
+  overflow-y: auto;
+  background-color: #666;
+}
+body > #root > main#dashboard > .contents > .content > .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+}
+body > #root > main#dashboard > .contents > .content > .item > .infos {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+body > #root > main#dashboard > .contents > .content > .item > .infos > h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-size: 11px;
+  color: #FFF;
+}
+body > #root > main#dashboard > .contents > .content > .item > .infos > div.folder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.5);
+}
+body > #root > main#dashboard > .contents > .content > .item > .infos > div.folder > span {
+  width: 95%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+body > #root > main#dashboard > .contents > .content > .item > button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  padding: 10px;
+  width: 40px;
+  color: #FFF;
+  background-color: #A50A05;
+  border: none;
+}
+body > #root > main#dashboard > .contents > .content > hr {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex: initial;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-item-align: stretch;
+  align-self: stretch;
+  margin: 25px 0;
+  width: 100%;
+  height: 1px;
+  background-color: #737373;
+  border: none;
+}

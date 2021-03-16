@@ -1,0 +1,167 @@
+> .footer {
+    .flex('row', 'end', 'end', 'stretch');
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 98;
+
+    > .logo {
+        .flex('column', 'center', 'start', 'stretch');
+        position: absolute;
+        left: 24px;
+        bottom: 15px;
+
+        > small {
+            position: relative;
+            bottom: -15px;
+            left: 30px;
+            font-size: 29px;
+            color: fade(@white, 80);
+        }
+
+        > span {
+            font-family: @robotoCondensed;
+            font-size: 52px;
+            font-weight: bolder;
+            text-transform: uppercase;
+        }
+    }
+
+    > .iContainer {
+        .flex('row', 'center', 'center', 'stretch');
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: 70px;
+        font-family: @roboto;
+        font-size: 16px;
+        background-color: @red3;
+        z-index: 3;
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 80px 80px 0 0;
+            border-color: @red2 transparent transparent transparent;
+            z-index: 4;
+        }
+
+        > .infos {
+            .flex('row', 'start', 'center', 'stretch');
+            flex: 1;
+            min-height: auto !important;
+
+            &:before,
+            &:after {
+                width: auto;
+                height: auto;
+                background: transparent;
+            }
+
+            > .marquee > .marquee-item {
+                .flex('row', 'start', 'center', 'stretch', '', 0 0 auto);
+
+                > * {
+                    .flex('column', 'center', 'center', 'stretch', '', 0 0 auto);
+                    .flexWrap(all, nowrap);
+                    padding: 0 20px;
+                    border-left: 1px solid lighten(@red3, 15);
+
+                    &.title {
+                        .flex('column', 'center', 'start', 'stretch', '', 0 0 auto);
+                        padding: 0 30px;
+                        font-family: @robotoCondensed;
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: @white;
+                        background-color: lighten(@red3, 10);
+
+                        > small {
+                            font-family: @roboto;
+                            font-size: 14px;
+                            font-weight: normal;
+                            color: fade(@white, 80);
+                        }
+                    }
+
+                    > .teams {
+                        .flex('row', 'start', 'center', 'stretch', '', 0 0 auto);
+
+                        > b {
+                            &:first-child {
+                                margin-right: 10px;
+                            }
+
+                            &:last-child {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+    > .social-media {
+        .flex('row', 'start', 'center', 'stretch');
+        position: relative;
+        margin-right: 80px;
+        padding-left: 37px;
+        width: 73%;
+        height: 80px;
+        background-color: @red2;
+        z-index: 2;
+
+        &:before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: -55px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0 80px 55px;
+            border-color: transparent transparent @red2 transparent;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: -55px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 80px 55px 0 0;
+            border-color: @red2 transparent transparent transparent;
+        }
+
+        > .icons > img {
+            margin: 5px 7px 0;
+        }
+
+        > .text {
+            margin-left: 30px;
+            font-size: 40px;
+            font-weight: bolder;
+            color: fade(@white, 70);
+        }
+    }
+
+    > .bkg-line {
+        .flex('row', 'center', 'center', 'stretch');
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 15px;
+        background-color: @red;
+        z-index: 1;
+    }
+}
